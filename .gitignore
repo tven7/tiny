@@ -1,0 +1,7 @@
+.gradle/
+gradle/
+.idea/
+/build/
+out/
+tiny-url-slack-app.iml
+settings.gradle
