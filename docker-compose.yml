@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.5
+    mem_limit: 200m
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=tiny
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    volumes:
+      - ./docker-generated/mysql/.database:/var/lib/mysql

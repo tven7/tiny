@@ -2,7 +2,6 @@ package slack.app.tiny.util;
 
 import java.util.Optional;
 
-
 public class Base62 {
 
     private static final String codeStr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -18,8 +17,7 @@ public class Base62 {
 
         if(num==0) return Optional.of(getChar(0).toString());
 
-        StringBuffer code = new StringBuffer();
-
+        StringBuilder code = new StringBuilder();
         while (num >0){
             code.append(getChar(num % 62));
             num = num / 62;
