@@ -20,7 +20,6 @@ public class Base62 {
 
         if(num==0) return Optional.of(getChar(0).toString());
 
-        List<Integer> digits = new ArrayList<Integer>();
         StringBuffer code = new StringBuffer();
 
         while (num >0){
