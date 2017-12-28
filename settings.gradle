@@ -1,2 +1,3 @@
 rootProject.name = 'tiny-url-slack-app'
+include 'tiny-main', 'tiny-it'
 
