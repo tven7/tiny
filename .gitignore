@@ -1,8 +1,61 @@
-.gradle/
-gradle/
-.idea/
-/build/
-out/
-tiny-url-slack-app.iml
-settings.gradle
 docker-generated
+
+# REQUIRED FOR SERVICE-TEMPLATE:
+# Githash endpoint
+git.properties
+
+.database/
+docker-generated/
+out/
+
+# Operating System Files
+
+*.DS_Store
+Thumbs.db
+*.sw?
+.#*
+*#
+*~
+*.sublime-*
+
+#git, kdiff3
+*.orig
+*.BASE.*
+*.BACKUP.*
+*.LOCAL.*
+*.REMOTE.*
+
+# Secure config repo
+/secure-config-prod
+
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
+nbactions.xml
+
+# Eclipse Project Files
+
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# Log files
+*.log
+
+README.html
+
+# Python
+
+*.pyc
+
