@@ -1,2 +1,2 @@
 # tiny
-Slack url shortener app 
+url shortener service 
