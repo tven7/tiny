@@ -1,12 +1,12 @@
-package slack.app.tiny;
+package com.tiny;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class Tiny {
+public class Application {
     public static void main(String [] args){
-        SpringApplication.run(Tiny.class,args);
+        SpringApplication.run(Application.class,args);
     }
 }

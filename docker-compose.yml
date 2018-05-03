@@ -1,14 +1,15 @@
-version: '2'
+version: '3'
 services:
-  mysql:
-    image: mysql:5.5
-    mem_limit: 200m
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=tiny
-    ports:
-      - "3306:3306"
-    expose:
-      - 3306
+  redis:
+    image: redis:4.0.5-alpine
+    hostname: redis
+    networks:
+      - redis-net
     volumes:
-      - ./docker-generated/mysql/.database:/var/lib/mysql
+      - redis-data:/data
+      - ./lib:/var/lib/redis
+    command: ["redis-server --loadmodule /var/lib/redis/rebloom.so"]
+networks:
+  redis-net:
+volumes:
+  redis-data:

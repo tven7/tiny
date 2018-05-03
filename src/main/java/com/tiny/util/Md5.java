@@ -1,18 +1,19 @@
-package slack.app.tiny.util;
+package com.tiny.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Iterator;
 import java.util.Optional;
 
-public class Md5Hash {
+public class Md5 {
 
     private ByteArrayBitIterable bitIterable;
+    public static int ERROR = -1;
 
-    public Optional<String> get42Md5Bits(String text)  {
+    public int hash(String text)  {
 
         if(text == null || text.length() < 4){
-            return Optional.empty();
+            return -1;
         }
 
         int bitCount = 0;
@@ -21,17 +22,16 @@ public class Md5Hash {
             createHash(text);
             StringBuilder builder = new StringBuilder();
             for(boolean b:bitIterable){
-                if(bitCount > 31)
+                if(bitCount > 30) //greater than 30 bits would result in an Integer overflow
                     break;
                 builder.append(b==true?1:0);
                 bitCount++;
             }
-
-            return Optional.ofNullable(builder.toString());
+            return Integer.parseInt(builder.toString(),2);
         }catch(NoSuchAlgorithmException nsae){
             nsae.printStackTrace();
-            return Optional.empty();
         }
+        return -1;
     }
 
     private void createHash(String text) throws NoSuchAlgorithmException{
