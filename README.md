@@ -1,3 +1,3 @@
 # URL shortener service
 
-### This service is meant to provide a license free way to run a URL shorter on your own AWS account
+### This service is meant to provide a license free way to run a URL shortener on your own AWS account
